@@ -17,23 +17,23 @@ chrome.bookmarks.search("coding resources", function(results) {
 
 // get the id
 
-const getChildren = x => {
-  chrome.bookmarks.search(x, result => {
-    result.map(childrenResult => {
-      console.log(childrenResult.id);
-      chrome.bookmarks.getChildren(childrenResult.id, results => {
-        results.map(result => {
-          chrome.bookmarks.create(
-            {
-              title: result.title,
-              url: result.url
-            },
-            result => console.log(result)
-          );
-        });
-      });
-    });
-  });
-};
+// const getChildren = x => {
+//   chrome.bookmarks.search(x, result => {
+//     result.map(childrenResult => {
+//       console.log(childrenResult.id);
+//       chrome.bookmarks.getChildren(childrenResult.id, results => {
+//         results.map(result => {
+//           chrome.bookmarks.create(
+//             {
+//               title: result.title,
+//               url: result.url
+//             },
+//             result => console.log(result)
+//           );
+//         });
+//       });
+//     });
+//   });
+// };
 
-getChildren("coding resources");
+// getChildren("coding resources");
